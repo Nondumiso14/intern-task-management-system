@@ -1,3 +1,4 @@
+const submissionRoutes = require("./routes/submissionRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const express = require("express");
 const dotenv = require("dotenv");
@@ -15,6 +16,7 @@ app.use(express.json());
 // ✅ THEN use routes
 app.use("/api", authRoutes);
 app.use("/api", taskRoutes);
+app.use("/api", submissionRoutes);
 
 app.get("/", (req, res) => {
   res.send("Intern Task Management System API Running...");
